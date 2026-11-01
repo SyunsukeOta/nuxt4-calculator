@@ -18,6 +18,10 @@ logs
 .fleet
 .idea
 
+# Claude Code
+CLAUDE.md
+.claude/skills/figma-from-screenshot/SKILL.md
+
 # Local env files
 .env
 .env.*
