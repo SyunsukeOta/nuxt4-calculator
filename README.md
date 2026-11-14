@@ -80,6 +80,7 @@ Calculator（384×835）
   ```sh
   npm install @nuxt/ui tailwindcss
   ```
+- [Nuxt UI について](https://zenn.dev/1stscratch/articles/b387b71cb23255)
 - ``nuxt.config.ts`` にインストールしたパッケージを追加
   ```ts
   modules: ['@nuxt/ui'],
@@ -109,4 +110,15 @@ Calculator（384×835）
   ```css
   --font-sans: "Inter", sans-serif;
   ```
+
+### ボタンコンポーネントの作成(11/14-16:30)
+- コンポーネント: ``components/CalculatorButton.vue``
+- Figma 上の ``NumberButton``, ``FunctionButton``, ``OperatorButton`` を 1 つにまとめる
+  - 違うのは色だけ
+  - kind: ボタンの種類を指定
+  - label: ボタンの中身を指定
+- Figma で実装したボタンの UI を claude code に書かせる
+  - kindClass という辞書を作成
+    - ボタンの種類をキーとして、背景色とボーダーの色を値として設定
+    - この辞書を UButton タグの class 属性で呼び出すことで、ボタンの種類ごとに背景色とボーダーの色を設定
 

@@ -15,6 +15,6 @@
 }
 
 :root, .dark {
-  -ui-bg: var(--color-bg-app);
-  -ui-text: var(--color-text-primary);
+  --ui-bg: var(--color-bg-app);
+  --ui-text: var(--color-text-primary);
 }
