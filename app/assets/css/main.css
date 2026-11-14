@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --color-bg-app: #000000;
+  --color-button-number-bg: #2a2a2a;
+  --color-button-number-border: #474747;
+  --color-button-function-bg: #575757;
+  --color-button-function-border: #7e7e7e;
+  --color-button-operator-bg: #ff8b00;
+  --color-button-operator-border: #ffc200;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a4a4ac;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root, .dark {
+  -ui-bg: var(--color-bg-app);
+  -ui-text: var(--color-text-primary);
+}

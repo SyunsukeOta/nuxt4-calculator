@@ -21,6 +21,11 @@
   - 演算子: 「＋」「ー」「×」「÷」
   - 等号: 「＝」
 
+# ディスプレイ(11/3-19:00)
+- Display: 表示部
+  - Expression: 計算式
+  - Value: 値
+
 # Claude + Figmaデザイン実装(11/1-18:00)
 ## 1. カラー登録（Variables）
 - 画像のピクセルから色を抽出（Display P3 → sRGB に変換）
@@ -61,4 +66,47 @@ Calculator（384×835）
 - フォントは Inter（SF Pro は Figma の API で文字幅を計算できなかった）
 - 演算子は文字のため、画像のアイコンより細く小さい
 - 上部の時計・計算機アイコンとステータスバーは対象外
+
+# デザインについて(11/14-15:40)
+- Figma で作成したデザインから Dev Mode で CSS をとりたい
+  - Dev Mode は有料プランでないとダメ
+  - Figma MCP からとってくるのが無難
+- とってきた CSS を使用して、将来的に Nuxt で画面を実装する
+- Nuxt UI を使用する予定
+  - Tailwind CSS ベース、TS 対応、キーボードアクセシビリティ対応
+
+## Nuxt UI の導入
+- ``@nuxt/ui``, ``tailwindcss`` をインストールする
+  ```sh
+  npm install @nuxt/ui tailwindcss
+  ```
+- ``nuxt.config.ts`` にインストールしたパッケージを追加
+  ```ts
+  modules: ['@nuxt/ui'],
+  css: ['~/assets/css/main.css'],
+  ```
+- ``app/app.vue`` の全体を ``<UApp>`` で囲む(div タグを置き換える)
+  - トーストやモーダルなどの動作に必要
+
+# 計画(11/3-18:30)
+## プロトタイプ
+- ボタンを押した時に、押したボタンの内容を Value に表示させる
+
+### 色の登録
+- Nuxt UI をインストールしたので、 ``main.cs`` に import 文を書く
+  ```css
+  @import "tailwindcss";
+  @import "@nuxt/ui";
+  ```
+- 「@theme static」に Figma で使用した色を登録する。
+  - Figma で登録した名前をハイフン区切りで命名
+    ```css
+    --color-button-number-bg: #2a2a2a;
+    ```
+
+### フォントの登録
+- ``main.cs`` の ``@theme`` に追加
+  ```css
+  --font-sans: "Inter", sans-serif;
+  ```
 
